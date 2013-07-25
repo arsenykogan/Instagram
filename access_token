@@ -1,0 +1,21 @@
+curl -F 'client_id=21d3fe24045f414c9701786007c78cc2' -F 'client_secret=3336f99b131946cdb529f80e57487732' -F 'grant_type=authorization_code' -F 'redirect_uri=http://videofabrika.com/Projects/id/91/' -F 'code=b426817ae85b4113bcf87732b53da271' https://api.instagram.com/oauth/access_token
+
+https://api.instagram.com/oauth/access_token?client_id=21d3fe24045f414c9701786007c78cc2&client_secret=3336f99b131946cdb529f80e57487732&redirect_uri=http://videofabrika.com/Projects/id/91/&code=b426817ae85b4113bcf87732b53da271
+
+
+
+User Id: 371960081
+accessToken: 371960081.5b9e1e6.ad725cc687c34d6ebe3d669a0f35d3b7
+
+http://www.pinceladasdaweb.com.br/instagram/access-token/
+
+{"access_token":"371960081.21d3fe2.d3cd6d90dce147c98546bd4f9e6a7459","user":{"username":"uniformscale","bio":"","website":"","profile_picture":"http:\/\/images.ak.instagram.com\/profiles\/anonymousUser.jpg","full_name":"Uni","id":"371960081"}}
+
+
+
+InstaPrint
+
+CLIENT ID	21d3fe24045f414c9701786007c78cc2
+CLIENT SECRET	3336f99b131946cdb529f80e57487732
+WEBSITE URL	http://videofabrika.com/Projects/id/91/
+REDIRECT URI	http://videofabrika.com/Projects/id/91/

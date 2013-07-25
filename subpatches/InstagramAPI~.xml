@@ -1,0 +1,191 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta30.2.dtd" >
+   <PATCH nodename="C:\Users\user\Desktop\GitHub\Instagram\InstagramParser-2.v4p">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="0" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2460" top="2310" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2460" top="2310" width="1095" height="255">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12075" top="1965" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="https://api.instagram.com/v1/tags/art/media/recent?access_token=305017431.1fb234f.f126462b35134f44aca794d681125108&amp;max_tag_id=1360914218441">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="HTTP (Network Get String)" componentmode="Hidden" id="1" systemname="HTTP (Network Get String)" filename="%VVVV%\lib\nodes\modules\Network\HTTP (Network Get String).v4p">
+   <BOUNDS type="Node" left="1500" top="2760" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="URL" visible="1">
+   </PIN>
+   <PIN pinname="Body" visible="1">
+   </PIN>
+   <PIN pinname="Refresh" visible="1">
+   </PIN>
+   <PIN pinname="Encoding" slicecount="1" values="|System Default|">
+   </PIN>
+   <BOUNDS type="Window" left="3975" top="3840" width="10140" height="5505">
+   </BOUNDS>
+   <PIN pinname="Fail" visible="1">
+   </PIN>
+   <PIN pinname="Success" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsElement (XML JSON)" filename="..\..\JSONAsElement.dll" nodename="AsElement (XML JSON)" componentmode="Hidden" id="2" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="2070" top="3165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1500" top="1500" width="2730" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1500" top="1500" width="2730" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="https://api.instagram.com/v1/tags/">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1845" top="1815" width="8520" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1845" top="1815" width="1845" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="/media/recent?access_token=305017431.1fb234f.f126462b35134f44aca794d681125108">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (String)" filename="" nodename="Add (String)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1500" top="2175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2940" top="2535" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="2940" top="2175" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2940" top="2175" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <NODE id="8" nodename="IOBox (String)" componentmode="InABox" systemname="IOBox (String)" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="2955" top="3165" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2955" top="3165" width="3060" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="/data/*/images/standard_resolution/url">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="MyChildTag/MyChildsChildTag">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="9" systemname="GetElements (XElement ByXPath)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="GetElements (XML ByXPath)" componentmode="Hidden" hiddenwhenlocked="0">
+   <PIN pinname="Element" visible="1">
+   </PIN>
+   <PIN pinname="XPath" visible="1">
+   </PIN>
+   <BOUNDS type="Node" left="2055" top="3540" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Elements" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="10" systemname="Element (XElement Split)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Element (XML Split)" componentmode="Hidden" hiddenwhenlocked="0">
+   <PIN pinname="Element" visible="1">
+   </PIN>
+   <BOUNDS type="Node" left="2040" top="4245" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Children" visible="1">
+   </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="11" systemname="Reverse (String)" nodename="Reverse (String)" componentmode="Hidden">
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <BOUNDS type="Node" left="2220" top="4680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output String" dstnodeid="5" dstpinname="Input 1" linkstyle="Bezier">
+   </LINK>
+   <NODE id="12" systemname="IOBox (String)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Input 2|">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output String" dstnodeid="5" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output String" dstnodeid="5" dstpinname="Input 3" linkstyle="Bezier">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="1" dstpinname="URL">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Change" dstnodeid="1" dstpinname="Refresh">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Elements" dstnodeid="10" dstpinname="Element" hiddenwhenlocked="0">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="9" dstpinname="Element" hiddenwhenlocked="0">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output String" dstnodeid="9" dstpinname="XPath" hiddenwhenlocked="0">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Body" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Value" dstnodeid="11" dstpinname="Input">
+   </LINK>
+   <NODE id="13" systemname="IOBox (String)" componentmode="InABox">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   <BOUNDS type="Box" left="2220" top="5280" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2220" top="5280" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="13" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Period">
+   </LINK>
+   <BOUNDS type="Window" left="1043" top="4263" width="11865" height="6280">
+   </BOUNDS>
+   </PATCH>
