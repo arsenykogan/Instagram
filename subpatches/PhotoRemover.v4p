@@ -9,6 +9,8 @@
    </PIN>
    <PIN pinname="Do Execute">
    </PIN>
+   <PIN pinname="Block until finished" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="1740" top="5760" width="100" height="100">
@@ -123,9 +125,11 @@
    </PIN>
    <PIN pinname="File" visible="1" slicecount="1" values="..\..\..\..\Windows\System32\cmd.exe">
    </PIN>
-   <PIN pinname="Do Execute" visible="1">
+   <PIN pinname="Do Execute" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Result" visible="1">
+   </PIN>
+   <PIN pinname="Block until finished" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="Unzip (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (String)" componentmode="Hidden" id="8">
@@ -170,20 +174,6 @@
    <PIN pinname="Input Enum" slicecount="1" values="GlobalReset">
    </PIN>
    </NODE>
-   <NODE id="13" systemname="Delay (Animation)" nodename="Delay (Animation)" componentmode="Hidden">
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <BOUNDS type="Node" left="3405" top="5760" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output 1" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Time" slicecount="1" values="0.2">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="8" srcpinname="Output 1" dstnodeid="0" dstpinname="Commandline Arguments">
    </LINK>
    <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Do Execute">
@@ -214,11 +204,7 @@
    </LINK>
    <LINK srcnodeid="8" srcpinname="Output 2" dstnodeid="7" dstpinname="Commandline Arguments">
    </LINK>
-   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="7" dstpinname="Do Execute">
-   </LINK>
    <LINK srcnodeid="7" srcpinname="Result" dstnodeid="10" dstpinname="Input String">
-   </LINK>
-   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Input">
    </LINK>
    <BOUNDS type="Window" left="18720" top="3465" width="5010" height="9225">
    </BOUNDS>
@@ -267,5 +253,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="18" srcpinname="Bang" dstnodeid="5" dstpinname="Input 3">
+   </LINK>
+   <NODE id="13" systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Node" left="3405" top="5760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Output 1" dstnodeid="7" dstpinname="Do Execute">
    </LINK>
    </PATCH>
